@@ -1,4 +1,5 @@
-Exercício 8
-SELECT produto, AVG(receita) AS media_de_receita
+Exercício 9
+SELECT produto
 FROM vendas
-GROUP BY produto;
+GROUP BY produto
+HAVING SUM(receita) > 10000;
