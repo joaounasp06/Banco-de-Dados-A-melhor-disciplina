@@ -1,4 +1,4 @@
-Exercício 7
-SELECT curso, COUNT(*) AS numero_de_alunos
-FROM matriculas
-GROUP BY curso;
+Exercício 8
+SELECT produto, AVG(receita) AS media_de_receita
+FROM vendas
+GROUP BY produto;
