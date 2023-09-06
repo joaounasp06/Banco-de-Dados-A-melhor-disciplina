@@ -1,4 +1,5 @@
-Exercício 11
-SELECT livros.titulo, autores.nome
-FROM livros
-INNER JOIN autores ON livros.autor_id = autores.id;
+Exercício 12
+SELECT alunos.nome, matriculas.curso
+FROM alunos
+LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id;
+
