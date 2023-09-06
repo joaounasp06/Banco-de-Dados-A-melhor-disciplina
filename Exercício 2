@@ -1,3 +1,5 @@
-Exercício 3
-SELECT titulo FROM livros WHERE autor_id = (SELECT id FROM autores WHERE nome = 'J.K. Rowling');
-
+Exercício 4
+SELECT alunos.nome
+FROM alunos
+INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
+WHERE matriculas.curso = 'Engenharia de Software';
