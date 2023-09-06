@@ -1,0 +1,2 @@
+Exercício 2
+SELECT nome FROM autores WHERE YEAR(nascimento) < 1900;
