@@ -1,4 +1,4 @@
-Exercício 14
-SELECT matriculas.curso, alunos.nome
+Exercício 15
+SELECT alunos.nome, matriculas.curso
 FROM alunos
-RIGHT JOIN matriculas ON alunos.id = matriculas.aluno_id;
+INNER JOIN matriculas ON alunos.id = matriculas.aluno_id;
