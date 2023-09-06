@@ -1,5 +1,5 @@
-Exercício 19
-SELECT alunos.nome, COUNT(matriculas.id) AS numero_de_matriculas
-FROM alunos
-LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
-GROUP BY alunos.nome;
+Exercício 20
+SELECT produto
+FROM vendas
+GROUP BY produto
+HAVING SUM(receita) = (SELECT MAX(total_transacoes) FROM (SELECT produto, COUNT(*) AS total_transacoes FROM vendas GROUP BY produto) AS subquery);
