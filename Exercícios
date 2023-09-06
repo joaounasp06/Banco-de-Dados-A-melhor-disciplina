@@ -1,0 +1,4 @@
+Exercício 7
+SELECT curso, COUNT(*) AS numero_de_alunos
+FROM matriculas
+GROUP BY curso;
