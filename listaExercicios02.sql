@@ -1,7 +1,20 @@
-CREATE PROCEDURE sp_AutorMaisAntigo(OUT nome_autor VARCHAR(255))
+ele retorna uma lista de livros que pertencem a uma categoria específica
+
+Para usar você precisa dizer a ela qual categoria você deseja
+
+
+    
+CREATE PROCEDURE sp_LivrosPorCategoria(IN categoria_nome VARCHAR(100))
 BEGIN
-    SELECT CONCAT(Nome, ' ', Sobrenome) INTO nome_autor
-    FROM Autor
-    ORDER BY Data_Nascimento ASC
-    LIMIT 1;
+
+    
+a stored procedure olha para a tabela de livros ("Livro")
+Ela verifica cada livro para ver se ele pertence à categoria que você especificou
+Se pertencer, ela anota o título desse livro.
+    
+
+    SELECT Livro.Titulo
+    FROM Livro
+    INNER JOIN Categoria ON Livro.Categoria_ID = Categoria.Categoria_ID
+    WHERE Categoria.Nome = categoria_nome;
 END;
