@@ -1,20 +1,7 @@
-ele retorna uma lista de livros que pertencem a uma categoria específica
-
-Para usar você precisa dizer a ela qual categoria você deseja
-
-
-    
-CREATE PROCEDURE sp_LivrosPorCategoria(IN categoria_nome VARCHAR(100))
+CREATE PROCEDURE sp_LivrosESeusAutores()
 BEGIN
-
-    
-a stored procedure olha para a tabela de livros ("Livro")
-Ela verifica cada livro para ver se ele pertence à categoria que você especificou
-Se pertencer, ela anota o título desse livro.
-    
-
-    SELECT Livro.Titulo
+    SELECT Livro.Titulo, CONCAT(Autor.Nome, ' ', Autor.Sobrenome) AS Autor
     FROM Livro
-    INNER JOIN Categoria ON Livro.Categoria_ID = Categoria.Categoria_ID
-    WHERE Categoria.Nome = categoria_nome;
+    INNER JOIN Autor_Livro ON Livro.Livro_ID = Autor_Livro.Livro_ID
+    INNER JOIN Autor ON Autor_Livro.Autor_ID = Autor.Autor_ID;
 END;
